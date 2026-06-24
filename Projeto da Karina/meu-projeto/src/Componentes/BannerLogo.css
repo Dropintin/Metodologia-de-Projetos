@@ -1,0 +1,23 @@
+.banner-logo-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 40px 0 0 0; /* Removemos o padding de baixo para evitar vazios antes do rodapé */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita qualquer risco de gerar barra de rolagem horizontal indesejada */
+}
+
+.banner-container {
+  width: 100%;         /* Alterado de 92% para 100% para colar nas extremidades */
+  max-width: 100%;     /* Remove o limite de 1400px para expandir em monitores grandes */
+  border-radius: 0;    /* Remove as bordas arredondadas para a imagem sangrar perfeitamente nas laterais */
+  overflow: hidden;
+}
+
+.banner-display-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

@@ -1,0 +1,95 @@
+/* 1. ESTRUTURA DA NAVBAR ORIGINAL INTEGRADA */
+.navbar {
+  width: 100%;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background: #e2e4e7; /* Cor cinza integrada ao banner */
+  position: relative;
+  z-index: 100;
+}
+
+/* 2. CONTÊINER DA LOGO CORRIGIDO (SEM ABSOLUTE) */
+.logo-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+}
+
+/* Tamanho realçado e drop-shadow para a logo destacar sobre o fundo */
+.logo {
+  height: 110px; /* Define o tamanho grande ideal */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.08));
+  transform: translateY(10px); /* Desce suavemente a logo para flutuar sobre o banner abaixo */
+}
+
+/* 3. MENU DE LINKS ALINHADO */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Formatação padrão para eliminar textos roxos e sublinhados */
+.nav-links li a {
+  text-decoration: none !important;
+  font-size: 1.15rem;
+  color: #1c2434; /* Cor escura padrão */
+  font-weight: 500;
+  padding: 8px 0;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+/* Cor azul apenas na página ativa */
+.nav-links li.active a {
+  color: #2563eb !important;
+}
+
+/* Pequena barra azul embaixo do item ativo */
+.nav-links li.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2563eb;
+}
+
+/* 4. BOTÃO CONTATO */
+.btn-contato {
+  padding: 10px 28px;
+  border: 1.5px solid #1c2434;
+  border-radius: 30px;
+  background: transparent;
+  color: #1c2434;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-contato:hover {
+  background: #1c2434;
+  color: white;
+}

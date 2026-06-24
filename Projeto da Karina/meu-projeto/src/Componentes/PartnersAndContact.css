@@ -1,0 +1,231 @@
+/* Container Geral da Base */
+.partners-contact-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ==========================================================================
+   SEÇÃO ONGS - IMAGEM CHEIA E TEXTO INFERIOR COM SOMBRA
+   ========================================================================== */
+.ongs-section {
+  padding: 80px 4%;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ongs-title {
+  font-size: 2.8rem;
+  color: #14213d;
+  font-weight: 600;
+  margin-bottom: 50px;
+  font-family: "Arial Narrow", sans-serif;
+}
+
+.ongs-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.ong-card {
+  position: relative;
+  width: 320px;
+  height: 380px; /* <--- Aumentado aqui para deixar o card maior e mais imponente */
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Imagem Solta - Ocupa 100% do tamanho do card */
+.ong-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem preencher todo o espaço de forma imponente */
+  transition: transform 0.4s ease;
+}
+
+/* Sombra na base de dentro da imagem (escondida por padrão) */
+.ong-bottom-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%; /* Ocupa quase metade inferior do card para um degradê suave */
+  /* Cria uma sombra preta transparente suave de baixo para cima */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+  display: flex;
+  align-items: flex-end; /* Joga o texto lá para baixo */
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0; /* Começa invisível */
+  transition: opacity 0.3s ease;
+}
+
+/* Texto do nome da ONG */
+.ong-title-text {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Arial Narrow", sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra extra no texto para legibilidade */
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+/* INTERAÇÕES NO HOVER (PASSAR O MOUSE) */
+.ong-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Leve aproximação na imagem ao passar o mouse */
+.ong-card:hover .ong-card-img {
+  transform: scale(1.04);
+}
+
+/* Revela a sombra degradê na base da imagem */
+.ong-card:hover .ong-bottom-shadow {
+  opacity: 1;
+}
+
+/* Faz o texto subir suavemente na posição certa */
+.ong-card:hover .ong-title-text {
+  transform: translateY(0);
+}
+
+
+/* ==========================================================================
+   SEÇÃO CONTATO
+   ========================================================================== */
+.contact-section {
+  width: 100%;
+  background-color: #2563eb;
+  padding: 90px 6%;
+  box-sizing: border-box;
+}
+
+.contact-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.contact-text-side { color: #ffffff; }
+.contact-title { font-size: 3.2rem; font-weight: 500; margin-bottom: 24px; font-family: "Arial Narrow", sans-serif; }
+.contact-description { font-size: 1.1rem; line-height: 1.6; margin-bottom: 28px; opacity: 0.95; }
+.contact-warning-box { font-size: 0.95rem; line-height: 1.5; opacity: 0.85; border-left: 3px solid rgba(255, 255, 255, 0.3); padding-left: 18px; }
+.contact-form-side { width: 100%; }
+.contact-form-ui { display: flex; flex-direction: column; gap: 18px; }
+
+.interactive-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.field-icon-area {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #14213d;
+  background-color: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+}
+
+.clean-form-input {
+  flex: 1;
+  height: 60px;
+  border: none;
+  padding: 0 20px;
+  font-size: 1.15rem;
+  color: #14213d;
+  font-family: "Arial Narrow", sans-serif;
+  outline: none;
+}
+
+.clean-form-input::placeholder { color: #94a3b8; }
+.interactive-input-wrapper:focus-within { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+
+.interactive-submit-btn {
+  width: 100%;
+  height: 58px;
+  background: #ffffff;
+  color: #2563eb;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: "Arial Narrow", sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.25s, color 0.25s, transform 0.25s;
+}
+
+.interactive-submit-btn:hover {
+  background-color: #14213d;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.interactive-submit-btn:hover .send-icon-motion { transform: translateX(4px); transition: transform 0.2s ease; }
+.interactive-submit-btn:active { transform: translateY(-1px); }
+
+@media (max-width: 1024px) {
+  .contact-grid-container { grid-template-columns: 1fr; gap: 45px; }
+  .contact-title { font-size: 2.8rem; }
+}
+
+@media (max-width: 480px) {
+  .ong-card { width: 100%; height: 220px; }
+  .ongs-title { font-size: 2.2rem; }
+}
+
+.logoKuerten{
+    height: 80%;
+}
+
+/* Estilização para o contêiner da área de texto */
+.textarea-wrapper {
+  align-items: flex-start !important; /* Alinha o ícone no topo, não no centro */
+  padding-top: 12px;
+}
+
+.textarea-icon-area {
+  margin-top: 2px; /* Ajuste fino para o ícone alinhar com a primeira linha */
+}
+
+/* Customização da caixa de texto */
+.clean-form-textarea {
+  resize: vertical; /* Permite o usuário esticar apenas para baixo se precisar */
+  min-height: 100px;
+  font-family: inherit;
+  padding-top: 4px;
+}

@@ -1,0 +1,130 @@
+.main-content-wrapper {
+  width: 100%;
+  background-color: white;
+}
+
+/* Estilos da Seção Projeto (Não alterados) */
+.project-section {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  padding: 80px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-image-container {
+  width: 100%;
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.project-text-container h2 {
+  font-size: 2.5rem;
+  color: #14213d;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.project-text-container p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* ==========================================================================
+   FAIXA DE BENEFÍCIOS - IGUAL AO PROTÓTIPO (image_274f44.png)
+   ========================================================================== */
+.features-bar {
+  background-color: #1d52d4; /* O azul vivo e brilhante da imagem */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 8%;
+  color: white;
+  width: 100%;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center; /* Alinha o ícone verticalmente ao centro do texto */
+  gap: 20px;
+  flex: 1;
+  padding: 10px 40px;
+}
+
+/* Cria as linhas verticais separadoras entre os itens */
+.feature-item:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Círculo branco do ícone */
+.feature-icon-wrapper {
+  background-color: #ffffff;
+  color: #1d52d4; /* Ícone ganha a cor do fundo azul */
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Textos alinhados */
+.feature-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 280px; /* Evita que o texto espalhe demais para os lados */
+}
+
+.feature-info h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+}
+
+.feature-info p {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85); /* Texto descritivo levemente suave */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .project-section {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .features-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 30px;
+    gap: 35px;
+  }
+
+  .feature-item {
+    padding: 0;
+    width: 100%;
+  }
+
+  /* Remove as bordas verticais no mobile para não quebrar o layout */
+  .feature-item:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 25px;
+  }
+}

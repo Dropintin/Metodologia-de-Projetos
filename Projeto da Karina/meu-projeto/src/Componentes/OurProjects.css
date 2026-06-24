@@ -1,0 +1,211 @@
+.our-projects-section {
+  width: 100%;
+  padding: 80px 4%;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cabeçalho da Seção */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  max-width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-text h2 {
+  font-size: 2.8rem;
+  color: #14213d;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-family: "Arial Narrow", sans-serif; /* Aproxima do estilo condensado do protótipo */
+}
+
+.header-text p {
+  font-size: 1.1rem;
+  color: #475569;
+  max-width: 500px;
+  line-height: 1.4;
+}
+
+.view-all-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-family: "Arial Narrow", sans-serif;
+  transition: gap 0.2s;
+}
+
+.view-all-link:hover {
+  gap: 12px;
+}
+
+/* Área do Slider */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 98%;
+  margin: 0 auto;
+}
+
+.projects-slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0;
+  scrollbar-width: none; /* Oculta no Firefox */
+}
+
+.projects-slider::-webkit-scrollbar {
+  display: none; /* Oculta no Chrome/Safari */
+}
+
+/* Card Interativo Igual ao Protótipo */
+.project-card {
+  flex: 0 0 calc(33.333% - 20px);
+  min-width: 340px;
+  background: #f1f5f9; /* Fundo azul-gelo suave idêntico ao print */
+  border-radius: 16px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Interação na caixa (Card) */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+  background: #e2e8f0; /* Sutil escurecida ao passar o mouse */
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .card-image-wrapper img {
+  transform: scale(1.03);
+}
+
+/* Informações internas da caixa */
+.card-info {
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-info h3 {
+  font-size: 1.5rem;
+  color: #14213d;
+  margin-bottom: 14px;
+  font-weight: 500;
+  font-family: "Arial Narrow", sans-serif; /* Estilo de fonte fina e alta do design */
+}
+
+.card-info p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+/* Link Saiba Mais Alinhado */
+.card-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-family: "Arial Narrow", sans-serif;
+  width: max-content;
+  transition: gap 0.2s;
+}
+
+.card-link:hover {
+  gap: 12px;
+}
+
+/* Setas de Navegação Dinâmicas */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0; /* Invisível por padrão */
+  pointer-events: none;
+  transition: opacity 0.3s ease, background-color 0.2s, color 0.2s;
+}
+
+/* Seta aparece ao passar o mouse na seção */
+.nav-arrow.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-arrow.left {
+  left: -20px;
+}
+
+.nav-arrow.right {
+  right: -20px;
+}
+
+.nav-arrow:hover {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 0 0 calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .project-card {
+    flex: 0 0 100%;
+  }
+  .nav-arrow {
+    display: none;
+  }
+}
